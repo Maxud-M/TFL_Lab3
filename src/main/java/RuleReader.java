@@ -31,7 +31,8 @@ public class RuleReader {
         String letter;
         Pattern patternState = Pattern.compile("[q-u][0-9]?");
         Pattern patternLetter = Pattern.compile("[a-z] | !!");
-        Pattern patternStack = Pattern.compile("[A-Z][0-9]?");
+        Pattern patternStackS1 = Pattern.compile("[A-Z][0-9]?");
+        Pattern patternStackS2 = Pattern.compile("[A-Z][0-9]*")
         Matcher matcherState = patternState.matcher(str);
         if(matcherState.find()) {
             state1 = str.substring(matcherState.start(), matcherState.end());
@@ -42,12 +43,18 @@ public class RuleReader {
             letter = str.substring(matcherLetter.start(), matcherLetter.end());
             str = str.substring(matcherLetter.end());
         }
-        Matcher matcherStack = patternStack.matcher(str);
+        Matcher matcherStack = patternStackS1.matcher(str);
         if(matcherStack.find()) {
             stackS1 = str.substring(matcherStack.start(), matcherStack.end());
             str = str.substring(matcherStack.end());
         }
-        
+        matcherState = patternState.matcher(str);
+        if(matcherState.find()) {
+            state2 = str.substring(matcherState.start(), matcherState.end());
+            str = str.substring(matcherState.end());
+        }
+        matcherState()
+
         /* itr = 1;
         str = str.replaceAll(" ", "");
         String state1 = readStateOrStackS(str);
