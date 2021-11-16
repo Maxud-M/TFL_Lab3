@@ -4,7 +4,7 @@ public class PDA {
 
     ArrayList<Rule> rules;
     String startState;
-    String bottomStack;
+    String stackBottom;
 
     public class Rule{ //<state1, letter, stackS1> -> <state2, stackS2>
         private String state1;
