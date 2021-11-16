@@ -1,3 +1,5 @@
 public class PDA {
-    ArrayList<>
+    private class Rule{
+        
+    }
 }
