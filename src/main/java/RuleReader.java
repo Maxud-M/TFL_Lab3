@@ -2,7 +2,8 @@ public class RuleReader {
     public static int itr;
     public static String readStateOrStackS(String str) {
         int startOfRes = itr;
-        int endOfRes = itr;
+        int endOfRes = itr + 1;
+        if(str.charAt(endOfRes) == ',')
         String res = "";
         return res;
     }
@@ -30,7 +31,12 @@ public class RuleReader {
         }
         itr++;
         String state2 = readStateOrStackS(str);
-        
+        int stackS2start = itr;
+        while(str.charAt(itr) != '>') {
+            itr++;
+        }
+        String stackS2 = str.substring(stackS2start, itr);
+
         return new PDA.Rule(state1, state2, letter, stackS1, stackS2);
     }
 }

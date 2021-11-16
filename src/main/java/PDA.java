@@ -13,7 +13,7 @@ public class PDA {
         }
     }
 
-    public class Rule{ //<state1, letter, stackS1> -> <state2, stackS2>
+    public static class Rule{ //<state1, letter, stackS1> -> <state2, stackS2>
         private String state1;
         private String state2;
         private String letter;
