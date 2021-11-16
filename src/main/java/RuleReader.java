@@ -1,3 +1,4 @@
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class RuleReader {
@@ -26,7 +27,7 @@ public class RuleReader {
         Pattern patternStack = Pattern.compile("[A-Z][0-9]?");
         Pattern patterState = Pattern.compile("[q-u][0-9]?");
         Pattern patterLetter = Pattern.compile("[a-z]");
-        Matcher matcherStack = _
+        Matcher matcherStack = Matcher.
        /* itr = 1;
         str = str.replaceAll(" ", "");
         String state1 = readStateOrStackS(str);
