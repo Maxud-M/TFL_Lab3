@@ -6,6 +6,7 @@ public class PDAReader {
     public static String readStartSymbols(String str) {
         Pattern patternStartState = Pattern.compile("[q-u][0-9]?");
         Pattern patternStartStackS = Pattern.compile("[A-Z][0-9]?");
+        Matcher matcher =
     }
 
     public static PDA.Rule readRule(String str) {
@@ -18,29 +19,29 @@ public class PDAReader {
         Pattern patternLetter = Pattern.compile("[a-z] | !!");
         Pattern patternStackS1 = Pattern.compile("[A-Z][0-9]?");
         Pattern patternStackS2 = Pattern.compile("([A-Z][0-9]?)*");
-        Matcher matcherState = patternState.matcher(str);
-        if(matcherState.find()) {
-            state1 = str.substring(matcherState.start(), matcherState.end());
-            str = str.substring(matcherState.end());
+        Matcher matcher = patternState.matcher(str);
+        if(matcher.find()) {
+            state1 = str.substring(matcher.start(), matcher.end());
+            str = str.substring(matcher.end());
         }
-        Matcher matcherLetter = patternLetter.matcher(str);
-        if(matcherLetter.find()) {
-            letter = str.substring(matcherLetter.start(), matcherLetter.end());
-            str = str.substring(matcherLetter.end());
+        matcher = patternLetter.matcher(str);
+        if(matcher.find()) {
+            letter = str.substring(matcher.start(), matcher.end());
+            str = str.substring(matcher.end());
         }
-        Matcher matcherStackS1 = patternStackS1.matcher(str);
-        if(matcherStackS1.find()) {
-            stackS1 = str.substring(matcherStackS1.start(), matcherStackS1.end());
-            str = str.substring(matcherStackS1.end());
+        matcher = patternStackS1.matcher(str);
+        if(matcher.find()) {
+            stackS1 = str.substring(matcher.start(), matcher.end());
+            str = str.substring(matcher.end());
         }
-        matcherState = patternState.matcher(str);
-        if(matcherState.find()) {
-            state2 = str.substring(matcherState.start(), matcherState.end());
-            str = str.substring(matcherState.end());
+        matcher = patternState.matcher(str);
+        if(matcher.find()) {
+            state2 = str.substring(matcher.start(), matcher.end());
+            str = str.substring(matcher.end());
         }
-        Matcher matcherStackS2 = patternStackS2.matcher(str);
-        if(matcherStackS2.find()) {
-            stackS2 = str.substring(matcherStackS2.start(), matcherStackS2.end());
+        matcher = patternStackS2.matcher(str);
+        if(matcher.find()) {
+            stackS2 = str.substring(matcher.start(), matcher.end());
         } else {
             stackS2 = "";
         }
