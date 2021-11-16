@@ -6,7 +6,12 @@ public class PDA {
     String startState;
     String stackBottom;
 
-    PDA(ArrayList<String> )
+    PDA(ArrayList<String> rules) {
+
+        for(int i = 0; i < rules.size(); ++i) {
+            this.rules.add(RuleReader.readRule(rules.get(i)));
+        }
+    }
 
     public class Rule{ //<state1, letter, stackS1> -> <state2, stackS2>
         private String state1;

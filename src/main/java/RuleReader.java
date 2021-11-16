@@ -1,19 +1,17 @@
 public class RuleReader {
-    private  int itr;
-    private String readStateOrStackS(String str, int itr) {
+    public static int itr;
+    public static String readStateOrStackS(String str) {
         int startOfRes = itr;
         int endOfRes = itr;
-        for()
+        String res = "";
+        return res;
     }
 
     public static PDA.Rule readRule(String str) {
+        itr = 1;
         str = str.replaceAll(" ", "");
-        int itr = 1;
-        String state1;
-        String state2;
-        String stackS1;
-        String stackS2;
-        char letter;
-
+        String state1 = readStateOrStackS(str);
+        char letter = 
+        return new PDA.Rule(state1, state2, letter, stackS1, stackS2);
     }
 }
