@@ -3,7 +3,7 @@ public class PDA {
         String state1;
         String state2;
         char letter;
-        String 
+        String stack
 
     }
 }
