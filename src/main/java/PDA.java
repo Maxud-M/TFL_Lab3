@@ -51,7 +51,7 @@ public class PDA {
             String stackS1;
             String stackS2;
             char letter;
-            
+            readState
         }
     }
 }
