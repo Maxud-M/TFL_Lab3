@@ -24,6 +24,13 @@ public class RuleReader {
         str = str.replaceAll(" ", "");
         String state1 = readStateOrStackS(str);
         String letter = (str.charAt(itr) == '!')? str.substring(itr, itr + 2):str.substring(itr, itr + 1);
+        String stackS1 = readStateOrStackS(str);
+        while(str.charAt(itr) != '<') {
+            itr++;
+        }
+        itr++;
+        String state2 = readStateOrStackS(str);
+        
         return new PDA.Rule(state1, state2, letter, stackS1, stackS2);
     }
 }
