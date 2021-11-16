@@ -44,7 +44,7 @@ public class PDA {
         }
 
         public static Rule readRule(String str) {
-            
+            int itr;
         }
     }
 }
