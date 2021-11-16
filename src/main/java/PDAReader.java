@@ -8,8 +8,12 @@ public class PDAReader {
         Pattern pattern = Pattern.compile("[q-u][0-9]? | [A-Z][0-9]?");
         Matcher matcher = pattern.matcher(str);
         if(matcher.find()) {
-            res = str.substring(matcher.start(), matcher.end());
+            res = str.substring(matcher.start(), matcher.end()) + ":";
         }
+        if(matcher.find()) {
+            res += str.substring(matcher.start(), matcher.end());
+        }
+        return res;
     }
 
     public static PDA.Rule readRule(String str) {

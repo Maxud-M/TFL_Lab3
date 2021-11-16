@@ -8,7 +8,9 @@ public class PDA {
 
 
     PDA(ArrayList<String> rules) {
-        String startSymbols = rules.get(0);
+        String[] startSymbols = PDAReader.readStartSymbols(rules.get(0)).split(":");
+        startState = startSymbols[0];
+        stackBottom = startSymbols[1];
         for(int i = 1; i < rules.size(); ++i) {
             this.rules.add(PDAReader.readRule(rules.get(i)));
         }
