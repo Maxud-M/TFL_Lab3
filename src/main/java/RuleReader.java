@@ -11,7 +11,8 @@ public class RuleReader {
         itr = 1;
         str = str.replaceAll(" ", "");
         String state1 = readStateOrStackS(str);
-        char letter = 
+        itr++;
+        char letter = (str.charAt(itr) == '!')? 
         return new PDA.Rule(state1, state2, letter, stackS1, stackS2);
     }
 }
