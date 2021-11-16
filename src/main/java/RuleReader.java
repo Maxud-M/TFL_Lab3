@@ -1,9 +1,11 @@
+import java.util.regex.Pattern;
+
 public class RuleReader {
     public static int itr;
     public static String readStateOrStackS(String str) {
         int startOfRes = itr;
         int endOfRes = itr + 1;
-
+        Pattern pattern = Pattern.compile("")
         if(str.charAt(endOfRes) == )
         String res = "";
         return res;
