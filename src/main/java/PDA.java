@@ -7,8 +7,7 @@ public class PDA {
     String stackBottom;
 
     PDA(ArrayList<String> rules) {
-            
-
+        startState = 
         for(int i = 1; i < rules.size(); ++i) {
             this.rules.add(RuleReader.readRule(rules.get(i)));
         }
