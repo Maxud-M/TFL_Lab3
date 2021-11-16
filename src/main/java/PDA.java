@@ -8,7 +8,7 @@ public class PDA {
 
     PDA(ArrayList<String> rules) {
 
-        for(int i = 0; i < rules.size(); ++i) {
+        for(int i = 1; i < rules.size(); ++i) {
             this.rules.add(RuleReader.readRule(rules.get(i)));
         }
     }
