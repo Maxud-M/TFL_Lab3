@@ -1,7 +1,11 @@
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class RuleReader {
+public class PDAReader {
+
+    public static String readStartSymbols(String str) {
+        Pattern patternStartState = Pattern.compile("")
+    }
 
     public static PDA.Rule readRule(String str) {
         String state1 = "";

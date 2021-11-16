@@ -6,10 +6,11 @@ public class PDA {
     String startState;
     String stackBottom;
 
+
     PDA(ArrayList<String> rules) {
-        String startRule 
+        String startSymbols = rules.get(0);
         for(int i = 1; i < rules.size(); ++i) {
-            this.rules.add(RuleReader.readRule(rules.get(i)));
+            this.rules.add(PDAReader.readRule(rules.get(i)));
         }
     }
 
