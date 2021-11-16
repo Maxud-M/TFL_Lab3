@@ -4,9 +4,12 @@ import java.util.regex.Pattern;
 public class PDAReader {
 
     public static String readStartSymbols(String str) {
-        Pattern patternStartState = Pattern.compile("[q-u][0-9]?");
-        Pattern patternStartStackS = Pattern.compile("[A-Z][0-9]?");
-        Matcher matcher =
+        String res = "";
+        Pattern pattern = Pattern.compile("[q-u][0-9]? | [A-Z][0-9]?");
+        Matcher matcher = pattern.matcher(str);
+        if(matcher.find()) {
+            res = str.substring(matcher.start(), matcher.end());
+        }
     }
 
     public static PDA.Rule readRule(String str) {
