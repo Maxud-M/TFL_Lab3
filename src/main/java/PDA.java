@@ -8,7 +8,7 @@ public class PDA {
 
     PDA(ArrayList<String> )
 
-    public static class Rule{ //<state1, letter, stackS1> -> <state2, stackS2>
+    public class Rule{ //<state1, letter, stackS1> -> <state2, stackS2>
         private String state1;
         private String state2;
         private char letter;
@@ -43,21 +43,5 @@ public class PDA {
             return state2;
         }
 
-        private String readStateOrStackS(String str, int itr) {
-            int startOfRes = itr;
-            int endOfRes = itr;
-            for()
-        }
-
-        public static Rule readRule(String str) {
-            str = str.replaceAll(" ", "");
-            int itr = 1;
-            String state1;
-            String state2;
-            String stackS1;
-            String stackS2;
-            char letter;
-
-        }
     }
 }
