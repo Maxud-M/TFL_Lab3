@@ -23,7 +23,7 @@ public class PDAReader {
         String stackS2 = "";
         String letter = "";
         Pattern patternState = Pattern.compile("[q-u][0-9]?");
-        Pattern patternLetter = Pattern.compile("[a-z] | !!");
+        Pattern patternLetter = Pattern.compile("[a-z]");
         Pattern patternStackS1 = Pattern.compile("[A-Z][0-9]?");
         Pattern patternStackS2 = Pattern.compile("([A-Z][0-9]?)*");
         Matcher matcher = patternState.matcher(str);
@@ -31,10 +31,12 @@ public class PDAReader {
             state1 = str.substring(matcher.start(), matcher.end());
             str = str.substring(matcher.end());
         }
-        matcher = patternLetter.matcher(str);
-        if(matcher.find()) {
-            letter = str.substring(matcher.start(), matcher.end());
-            str = str.substring(matcher.end());
+        if(str.charAt(1) != ',') {
+            matcher = patternLetter.matcher(str);
+            if (matcher.find()) {
+                letter = str.substring(matcher.start(), matcher.end());
+                str = str.substring(matcher.end());
+            }
         }
         matcher = patternStackS1.matcher(str);
         if(matcher.find()) {
