@@ -43,7 +43,11 @@ public class PDA {
             return state2;
         }
 
-        
+        private String readStateOrStackS(String str, int itr) {
+            int startOfRes = itr;
+            int endOfRes = itr;
+            for()
+        }
 
         public static Rule readRule(String str) {
             str = str.replaceAll(" ", "");
