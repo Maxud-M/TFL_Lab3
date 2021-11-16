@@ -44,7 +44,14 @@ public class PDA {
         }
 
         public static Rule readRule(String str) {
+            str = str.replaceAll(" ", "");
             int itr = 1;
+            String state1;
+            String state2;
+            String stackS1;
+            String stackS2;
+            char letter;
+            
         }
     }
 }
