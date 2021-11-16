@@ -26,7 +26,7 @@ public class RuleReader {
         Pattern patternStack = Pattern.compile("[A-Z][0-9]?");
         Pattern patterState = Pattern.compile("[q-u][0-9]?");
         Pattern patterLetter = Pattern.compile("[a-z]");
-        
+        Matcher matcherStack = _
        /* itr = 1;
         str = str.replaceAll(" ", "");
         String state1 = readStateOrStackS(str);
