@@ -5,7 +5,6 @@ public class RuleReader {
     public static String readStateOrStackS(String str) {
         int startOfRes = itr;
         int endOfRes = itr + 1;
-        Pattern pattern = Pattern.compile("")
         if(str.charAt(endOfRes) == )
         String res = "";
         return res;
@@ -24,7 +23,9 @@ public class RuleReader {
     }
 
     public static PDA.Rule readRule(String str) {
-        itr = 1;
+        Pattern patternStack = Pattern.compile("[A-Z][0-9]?");
+        Pattern patterState = Pattern.compile("[q-u][0-9]?");
+       /* itr = 1;
         str = str.replaceAll(" ", "");
         String state1 = readStateOrStackS(str);
         String letter = (str.charAt(itr) == '!')? str.substring(itr, itr + 2):str.substring(itr, itr + 1);
@@ -40,6 +41,6 @@ public class RuleReader {
         }
         String stackS2 = str.substring(stackS2start, itr);
 
-        return new PDA.Rule(state1, state2, letter, stackS1, stackS2);
+        return new PDA.Rule(state1, state2, letter, stackS1, stackS2);*/
     }
 }
