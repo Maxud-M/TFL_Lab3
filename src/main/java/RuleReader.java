@@ -25,9 +25,12 @@ public class RuleReader {
 
     public static PDA.Rule readRule(String str) {
         Pattern patternStack = Pattern.compile("[A-Z][0-9]?");
-        Pattern patterState = Pattern.compile("[q-u][0-9]?");
-        Pattern patterLetter = Pattern.compile("[a-z]");
-        Matcher matcherStack = Matcher.
+        Pattern patternState = Pattern.compile("[q-u][0-9]?");
+        Pattern patternLetter = Pattern.compile("[a-z]");
+        Matcher matcherStack = patternStack.matcher(str);
+        Matcher matcherState = patternState.matcher(str);
+        Matcher matcherLetter = patternLetter.matcher(str);
+        matcherState.find()
        /* itr = 1;
         str = str.replaceAll(" ", "");
         String state1 = readStateOrStackS(str);
