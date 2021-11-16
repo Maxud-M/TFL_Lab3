@@ -3,7 +3,8 @@ public class RuleReader {
     public static String readStateOrStackS(String str) {
         int startOfRes = itr;
         int endOfRes = itr + 1;
-        if(str.charAt(endOfRes) == ',')
+
+        if(str.charAt(endOfRes) == )
         String res = "";
         return res;
     }
