@@ -43,6 +43,8 @@ public class PDA {
             return state2;
         }
 
+        
+
         public static Rule readRule(String str) {
             str = str.replaceAll(" ", "");
             int itr = 1;
@@ -51,7 +53,7 @@ public class PDA {
             String stackS1;
             String stackS2;
             char letter;
-            readState
+
         }
     }
 }
