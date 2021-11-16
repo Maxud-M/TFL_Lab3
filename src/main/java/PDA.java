@@ -1,10 +1,17 @@
+import java.util.ArrayList;
+
 public class PDA {
-    private class Rule{ //<state1, letter, stackS1> -> <state2, stackS2>
-        public String state1;
-        public String state2;
-        public char letter;
-        public String stackS1;
-        public String stackS2;
+
+    ArrayList<Rule> rules;
+    String startState;
+    String bottomStack;
+
+    public class Rule{ //<state1, letter, stackS1> -> <state2, stackS2>
+        private String state1;
+        private String state2;
+        private char letter;
+        private String stackS1;
+        private String stackS2;
 
         Rule(String state1, String state2, char letter, String stackS1, String stackS2) {
             this.state1 = state1;
@@ -14,6 +21,24 @@ public class PDA {
             this.letter = letter;
         }
 
-        
+        public char getLetter() {
+            return letter;
+        }
+
+        public String getStackS1() {
+            return stackS1;
+        }
+
+        public String getStackS2() {
+            return stackS2;
+        }
+
+        public String getState1() {
+            return state1;
+        }
+
+        public String getState2() {
+            return state2;
+        }
     }
 }
