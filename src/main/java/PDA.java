@@ -6,7 +6,9 @@ public class PDA {
     String startState;
     String stackBottom;
 
-    public class Rule{ //<state1, letter, stackS1> -> <state2, stackS2>
+    PDA(ArrayList<String> )
+
+    public static class Rule{ //<state1, letter, stackS1> -> <state2, stackS2>
         private String state1;
         private String state2;
         private char letter;
@@ -39,6 +41,10 @@ public class PDA {
 
         public String getState2() {
             return state2;
+        }
+
+        public static Rule readRule(String str) {
+            
         }
     }
 }
