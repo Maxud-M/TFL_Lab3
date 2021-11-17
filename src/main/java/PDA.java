@@ -9,7 +9,7 @@ public class PDA {
 
     CFG toCFG() {
         for(int i = 0; i < states.size(); ++i) {
-            new CFG.Rule(states.get(i), );
+            new CFG.Rule(states.get(i), '', );
         }
         CFG cfg = new CFG();
         return cfg;
