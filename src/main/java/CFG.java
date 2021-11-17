@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class CFG {
 
     ArrayList<Rule> rules;
-    Character startSymbol 
+
 
 
     public static class Rule{
