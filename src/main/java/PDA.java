@@ -6,6 +6,12 @@ public class PDA {
     String startState;
     String stackBottom;
 
+    CFG toCFG() {
+        for(int i = 0; i < )
+        CFG cfg = new CFG();
+        return cfg;
+    }
+
 
     PDA(ArrayList<String> rules) {
         String[] startSymbols = PDAReader.readStartSymbols(rules.get(0)).split(":");

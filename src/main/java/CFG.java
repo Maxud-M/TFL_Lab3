@@ -17,7 +17,7 @@ public class CFG {
         public NTerm getNTerm() {
             return nTerm;
         }
-        
+
         public ArrayList<NTerm> getNTerms() {
             return nTerms;
         }
