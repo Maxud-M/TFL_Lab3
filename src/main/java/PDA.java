@@ -8,11 +8,13 @@ public class PDA {
     String stackBottom;
 
     CFG toCFG() {
+        ArrayList<CFG.Rule> cfgRules = new ArrayList<CFG.Rule>(0);
         for(int i = 0; i < states.size(); ++i) {
-            new CFG.Rule(states.get(i), '', );
+            cfgRules = new CFG.Rule(new CFG.NTerm(true), ' ', new ArrayList<CFG.NTerm>(0).add(new CFG.NTerm(startState, states.get(i), stackBottom)));
         }
-        CFG cfg = new CFG();
-        return cfg;
+
+
+        return new CFG(cfgRules);
     }
 
 

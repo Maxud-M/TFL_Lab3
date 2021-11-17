@@ -35,7 +35,8 @@ public class CFG {
 
     }
 
-    public class NTerm{
+    public static class NTerm{
+        boolean startNTerm = false;
         private String state1;
         private String state2;
         private String stackS;
@@ -50,6 +51,10 @@ public class CFG {
 
         public String getStackS() {
             return stackS;
+        }
+
+        NTerm(boolean isStartNTerm) {
+            startNTerm = isStartNTerm;
         }
 
         NTerm(String state1, String state2, String stackS) {
