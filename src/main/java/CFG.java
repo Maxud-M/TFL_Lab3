@@ -7,20 +7,25 @@ public class CFG {
 
     public static class Rule{
         NTerm nTerm;
-        private Character leftPart;
-        private String rightPart;
+        private Character letter;
+        private ArrayList<NTerm> nTerms;
 
-        public Character getLeftPart() {
-            return leftPart;
+        public Character letter() {
+            return letter;
         }
 
-        public String getRightPart() {
-            return rightPart;
+        public NTerm getNTerm() {
+            return nTerm;
+        }
+        
+        public ArrayList<NTerm> getNTerms() {
+            return nTerms;
         }
 
-        Rule(Character leftPart, String rightPart) {
-            this.leftPart = leftPart;
-            this.rightPart = rightPart;
+        Rule(NTerm nTerm, char letter, ArrayList<NTerm> nTerms) {
+            this.nTerm = nTerm;
+            this.letter = letter;
+            this.nTerms = nTerms;
         }
 
 
