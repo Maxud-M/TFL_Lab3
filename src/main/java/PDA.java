@@ -14,7 +14,7 @@ public class PDA {
         for(int i = 0; i < states.size(); ++i) {
             cfgRules.add(new CFG.Rule(new CFG.NTerm(true), ' ', new ArrayList<CFG.NTerm>(Arrays.asList(new CFG.NTerm(startState, states.get(i), stackBottom)))));
         }
-        
+        for(int i = 0; i < )
 
 
         return new CFG(cfgRules);
