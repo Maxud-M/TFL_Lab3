@@ -4,6 +4,8 @@ import java.util.regex.Pattern;
 
 public class PDAReader {
 
+    public static ArrayList<String> states = new ArrayList<String>(0);
+
     public static String readStartSymbols(String str) {
         String res = "";
         Pattern pattern = Pattern.compile("[q-u][0-9]? | [A-Z][0-9]?");
@@ -31,6 +33,9 @@ public class PDAReader {
         if(matcher.find()) {
             state1 = str.substring(matcher.start(), matcher.end());
             str = str.substring(matcher.end());
+            if(!states.contains(state1)) {
+                states.add(state1);
+            }
         }
         if(str.charAt(1) != ',') {
             matcher = patternLetter.matcher(str);
@@ -48,6 +53,9 @@ public class PDAReader {
         if(matcher.find()) {
             state2 = str.substring(matcher.start(), matcher.end());
             str = str.substring(matcher.end());
+            if(!states.contains(state2)) {
+                states.add(state2);
+            }
         }
         matcher = patternStackS2.matcher(str);
         if(matcher.find()) {

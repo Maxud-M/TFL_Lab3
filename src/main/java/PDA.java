@@ -2,12 +2,15 @@ import java.util.ArrayList;
 
 public class PDA {
 
+    ArrayList<String> states;
     ArrayList<Rule> rules;
     String startState;
     String stackBottom;
 
     CFG toCFG() {
-        for(int i = 0; i < )
+        for(int i = 0; i < states.size()) {
+            
+        }
         CFG cfg = new CFG();
         return cfg;
     }
@@ -20,6 +23,7 @@ public class PDA {
         for(int i = 1; i < rules.size(); ++i) {
             this.rules.add(PDAReader.readRule(rules.get(i)));
         }
+        states = PDAReader.states;
     }
 
     public static class Rule{ //<state1, letter, stackS1> -> <state2, stackS2>
