@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -54,6 +55,11 @@ public class PDAReader {
         } else {
             stackS2 = "";
         }
-        return new PDA.Rule(state1, state2, letter, stackS1, stackS2);
+        matcher = patternStackS1.matcher("stackS2");
+        ArrayList<String> arrayOfStackS = new ArrayList<String>(0);
+        while(matcher.find()) {
+            arrayOfStackS.add(stackS2.substring(matcher.start(), matcher.end()));
+        }
+        return new PDA.Rule(state1, state2, letter, stackS1, arrayOfStackS);
     }
 }

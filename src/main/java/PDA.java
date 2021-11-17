@@ -21,9 +21,9 @@ public class PDA {
         private String state2;
         private String letter;
         private String stackS1;
-        private String stackS2;
+        private ArrayList<String> stackS2;
 
-        Rule(String state1, String state2, String letter, String stackS1, String stackS2) {
+        Rule(String state1, String state2, String letter, String stackS1, ArrayList<String> stackS2) {
             this.state1 = state1;
             this.state2 = state2;
             this.stackS1 = stackS1;
@@ -39,7 +39,7 @@ public class PDA {
             return stackS1;
         }
 
-        public String getStackS2() {
+        public ArrayList<String> getStackS2() {
             return stackS2;
         }
 
