@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class PDA {
 
@@ -9,9 +10,11 @@ public class PDA {
 
     CFG toCFG() {
         ArrayList<CFG.Rule> cfgRules = new ArrayList<CFG.Rule>(0);
+        cfgRules.add(new CFG.Rule(new CFG.NTerm(true), ' ', new ArrayList<CFG.NTerm>(Arrays.asList(new CFG.NTerm(startState, startState, stackBottom)))));
         for(int i = 0; i < states.size(); ++i) {
-            cfgRules = new CFG.Rule(new CFG.NTerm(true), ' ', new ArrayList<CFG.NTerm>(0).add(new CFG.NTerm(startState, states.get(i), stackBottom)));
+            cfgRules.add(new CFG.Rule(new CFG.NTerm(true), ' ', new ArrayList<CFG.NTerm>(Arrays.asList(new CFG.NTerm(startState, states.get(i), stackBottom)))));
         }
+        
 
 
         return new CFG(cfgRules);
