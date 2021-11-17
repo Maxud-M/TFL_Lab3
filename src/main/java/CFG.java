@@ -5,6 +5,9 @@ public class CFG {
 
     ArrayList<Rule> rules;
 
+    CFG(ArrayList<Rule> rules) {
+        this.rules = rules;
+    }
     public static class Rule{
         NTerm nTerm;
         private Character letter;
