@@ -8,11 +8,13 @@ public class PDAReader {
 
     public static String readStartSymbols(String str) {
         String res = "";
-        Pattern pattern = Pattern.compile("[q-u][0-9]? | [A-Z][0-9]?");
+        Pattern pattern = Pattern.compile("[q-u][0-9]?");
         Matcher matcher = pattern.matcher(str);
         if(matcher.find()) {
             res = str.substring(matcher.start(), matcher.end()) + ":";
         }
+        pattern = Pattern.compile("[A-Z][0-9]?");
+        matcher = pattern.matcher(str);
         if(matcher.find()) {
             res += str.substring(matcher.start(), matcher.end());
         }
@@ -23,12 +25,10 @@ public class PDAReader {
         String state1 = "";
         String state2 = "";
         String stackS1 = "";
-        String stackS2 = "";
-        String letter = "";
+        char letter = '\1';
         Pattern patternState = Pattern.compile("[q-u][0-9]?");
         Pattern patternLetter = Pattern.compile("[a-z]");
         Pattern patternStackS1 = Pattern.compile("[A-Z][0-9]?");
-        Pattern patternStackS2 = Pattern.compile("([A-Z][0-9]?)*");
         Matcher matcher = patternState.matcher(str);
         if(matcher.find()) {
             state1 = str.substring(matcher.start(), matcher.end());
@@ -37,10 +37,10 @@ public class PDAReader {
                 states.add(state1);
             }
         }
-        if(str.charAt(1) != ',') {
+        if(str.charAt(1) != '!') {
             matcher = patternLetter.matcher(str);
             if (matcher.find()) {
-                letter = str.substring(matcher.start(), matcher.end());
+                letter = str.substring(matcher.start(), matcher.end()).toCharArray()[0];
                 str = str.substring(matcher.end());
             }
         }
@@ -57,17 +57,23 @@ public class PDAReader {
                 states.add(state2);
             }
         }
-        matcher = patternStackS2.matcher(str);
-        if(matcher.find()) {
-            stackS2 = str.substring(matcher.start(), matcher.end());
-        } else {
-            stackS2 = "";
-        }
-        matcher = patternStackS1.matcher("stackS2");
+        matcher = patternStackS1.matcher(str);
         ArrayList<String> arrayOfStackS = new ArrayList<String>(0);
         while(matcher.find()) {
-            arrayOfStackS.add(stackS2.substring(matcher.start(), matcher.end()));
+            arrayOfStackS.add(str.substring(matcher.start(), matcher.end()));
         }
         return new PDA.Rule(state1, state2, letter, stackS1, arrayOfStackS);
+    }
+
+    public static PDA readPDA(ArrayList<String> rules) {
+        String[] startSymbols = PDAReader.readStartSymbols(rules.get(0)).split(":");
+        String startState = startSymbols[0];
+        String stackBottom = startSymbols[1];
+        ArrayList<PDA.Rule> pdaRules = new ArrayList<PDA.Rule>(0);
+        for(int i = 1; i < rules.size(); ++i) {
+            pdaRules.add(PDAReader.readRule(rules.get(i)));
+        }
+        return new PDA(states, pdaRules, startState, stackBottom);
+
     }
 }
